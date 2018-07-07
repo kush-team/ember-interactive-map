@@ -1,0 +1,64 @@
+// Burger Menu Overrides
+$bm-transition-duration: 0.3s;
+$bm-overlay-background: rgba(0, 0, 0, 0.7);
+
+@import 'ember-burger-menu';
+@import 'ember-paper';
+@import "bourbon";
+@import "neat";
+
+
+@import 'base/burger-menu';
+
+.main-container {
+	display: flex;
+	flex-directon: column;
+}
+
+.primary {
+	flex: 2;
+	background: #fff;
+	height: 100%;
+}
+
+.secondary {
+	flex: 1;
+	max-width: 250px;
+	padding: 0
+}
+
+.list-box {
+	padding: 0 1em;
+	list-style: none;
+
+	a {
+		width: 100%;
+		display: block;
+		text-decoration: none;
+		color: #333;
+		padding: .2em 0;
+
+		&:hover {
+			color: #000;
+		}
+	}
+}
+
+.search-box {
+	padding: 1em;
+	background: #333;
+
+	input {
+		width: 100%;
+		background: none;
+		color: #fff;
+		border: none;
+		outline: 0 none;
+	}
+}
+
+.burger-menu-button {
+	position: fixed;
+	top: 0;
+	left: 0;
+}

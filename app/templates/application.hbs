@@ -1,0 +1,24 @@
+{{#burger-menu dismissOnItemClick=true as |burger|}}
+  {{#burger.menu itemTagName="li" as |menu|}}
+    <button {{action burger.state.actions.close}}>{{fa-icon "close"}}</button>
+    <ul>
+      {{#menu.item}}
+        {{link-to 'Inicio' 'index'}}
+      {{/menu.item}}
+    </ul>
+
+<div class="meta">
+	    <h1>Patrimonio histórico "Cementerio de Maipú"-ITI ES N° 2 Maipú</h1>
+<h4><i>por Gustavo Annessi</i> </h4>
+</div>
+  {{/burger.menu}}
+ 
+  {{#burger.outlet}}
+    <button {{action burger.state.actions.toggle}} class="burger-menu-button">
+		{{fa-icon "bars"}}
+    </button>
+    <div class="main-container">
+	    {{outlet}}
+    </div>
+  {{/burger.outlet}}
+{{/burger-menu}}
