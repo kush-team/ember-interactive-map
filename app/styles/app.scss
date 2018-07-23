@@ -34,12 +34,12 @@ $main-color: #48466d;
 	top: 0;
 	bottom: 0;
 	background-size: cover;
-
+	overflow: auto;
 	
 
 
 	.intro	{
-    	height: 100%;
+    	height: auto;
 		text-align: center;
 		color: #fff;
 		display: flex;
@@ -52,6 +52,7 @@ $main-color: #48466d;
 
 		img {
 			margin: 15px 0;
+		    padding-top: 20vh;
 		}
 
 		h2 {
@@ -90,12 +91,18 @@ $main-color: #48466d;
 
 	.about {
 		text-align: left;
+		padding-bottom: 150px;
 
 		h2 {
 			margin: 10px 0;
 			font-size: 26px;
 			font-weight: 300;
 			text-align: center;
+		}
+
+		img {
+			margin: 15px 0;
+		    padding-top: 50px;
 		}
 
 		p {
@@ -117,7 +124,7 @@ $main-color: #48466d;
 .home-back::before {
 	background-color: #000;
 	content: '';
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	left: 0;
 	right: 0;
@@ -173,13 +180,21 @@ $main-color: #48466d;
 	}
 }
 
+.bm-content {
+	overflow: hidden !important;
+}
+
 .app-container {
 	display: flex;
 	height: calc( 100vh - 60px);
+	overflow: hidden;
 
 	aside {
 		width: 335px;
 		background: #fff;
+		z-index: 10;
+		position: relative;
+	    border-right: 2px solid #48466d;
 	}
 
 	main {
@@ -273,7 +288,7 @@ $main-color: #48466d;
 	}
 
 	.cp-Panel-body-inner {
-		padding: 0 15px;
+		padding: 0 15px 15px;
 
 		a {
 			display: block;
@@ -285,4 +300,40 @@ $main-color: #48466d;
 			color: $main-color;
 		}
 	}
+}
+
+
+
+
+
+
+.surroundings,
+.levels {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+
+.levels {
+	width: 140vmin;
+	height: 90vmin;
+	margin: -58vmin 0 0 -34vmin;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	transition: transform 0.3s,
+	-webkit-transform 0.3s;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.surroundings {
+	-webkit-transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin);
+	transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin);
+}
+
+.levels {
+	z-index: 0;
+	transform: rotateX(45deg) rotateZ(0) translateZ(0);
 }
