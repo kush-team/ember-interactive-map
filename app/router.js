@@ -7,6 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('sobre-la-aplicacion');
+  this.route('patrimonios');
 });
 
 export default Router;

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+
 // Burger Menu Overrides
 $bm-transition-duration: 0.3s;
 $bm-overlay-background: rgba(0, 0, 0, 0.7);
+$main-color: #48466d;
 
 @import 'ember-burger-menu';
 @import 'ember-paper';
@@ -10,55 +13,276 @@ $bm-overlay-background: rgba(0, 0, 0, 0.7);
 
 @import 'base/burger-menu';
 
-.main-container {
-	display: flex;
-	flex-directon: column;
+.burger-menu-button {
+	display: none;
 }
 
-.primary {
-	flex: 2;
-	background: #fff;
-	height: 100%;
+* {
+	outline: 0 none;
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
 }
 
-.secondary {
-	flex: 1;
-	max-width: 250px;
-	padding: 0
-}
 
-.list-box {
-	padding: 0 1em;
-	list-style: none;
+/////////////////////////////////////////////
 
-	a {
-		width: 100%;
-		display: block;
-		text-decoration: none;
-		color: #333;
-		padding: .2em 0;
+.home-back {
+	background: url(/assets/back-inicio.jpg);
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-size: cover;
 
-		&:hover {
-			color: #000;
+	
+
+
+	.intro	{
+    	height: 100%;
+		text-align: center;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		max-width: 600px;
+		padding: 0 1em;
+		margin: 0 auto;
+
+		img {
+			margin: 15px 0;
+		}
+
+		h2 {
+			margin: 0;
+			text-transform: uppercase;
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		h1 {
+			margin: 30px 0;
+			font-size: 48px;
+			font-weight: 300;
+		}
+
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 12px;
+			padding: 1em 2em;
+		}
+
+		.actions {
+			
+			margin: 15px;
+			display: block;
+		
+			a {
+				color: #333;
+				background: #fff;
+			    margin: 0 5px;
+			}	
+		}
+	}
+
+	.about {
+		text-align: left;
+
+		h2 {
+			margin: 10px 0;
+			font-size: 26px;
+			font-weight: 300;
+			text-align: center;
+		}
+
+		p {
+			line-height: 25px;
+			font-size: 18px;
+		}
+
+		.about-back {
+			font-size: 23px;
+
+			color: #fff;
+			position: fixed; 
+			right: 0;
+			top: 0;
 		}
 	}
 }
 
-.search-box {
-	padding: 1em;
-	background: #333;
+.home-back::before {
+	background-color: #000;
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0;
+	right: 0;
+	height: 100%;
+	opacity: 0.7;
+	z-index: -1;
+}
 
-	input {
-		width: 100%;
-		background: none;
+
+/////////////////////////////////////////////
+
+.app-bar {
+	background: url(/assets/pattern-marble.jpg);
+	display: block;
+	height: 60px;
+	background-size: cover;
+	color: #fff;
+	padding: 10px 5px;
+	display: flex;
+
+	.logo {
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		margin-left: 15px;
 		color: #fff;
-		border: none;
-		outline: 0 none;
+
+		b {
+			margin-left: 15px;
+			font-size: 16px;
+		}
+	}
+
+	.actions {
+		text-align: right;
+		flex: 1;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 14px;
+		align-items: center;
+		display: flex;
+		justify-content: flex-end;
+		padding-right: 30px;
+
+		a {
+			color: #fff;
+			padding: 0 15px;
+		}
+
+		.fa {
+			margin-right: 10px;
+		}
 	}
 }
 
-.burger-menu-button {
-	position: fixed;
-	top: 0;
-	left: 0;
+.app-container {
+	display: flex;
+	height: calc( 100vh - 60px);
+
+	aside {
+		width: 335px;
+		background: #fff;
+	}
+
+	main {
+		background: #f9f9f9;
+		text-align: center;
+		width: 100%;
+	}
+}
+
+/////////////////////////////////////////////
+
+.search-box {
+	border-bottom: 3px solid #ddd;
+	padding: 18px 15px;
+	display: block;
+	position: relative;
+	opacity: .5;
+	-webkit-transition: all 0.42s cubic-bezier(0.7, 0, 0.3, 1);
+	-moz-transition: all 0.42s cubic-bezier(0.7, 0, 0.3, 1);
+	transition: all 0.42s cubic-bezier(0.7, 0, 0.3, 1);
+
+	&:hover {
+		opacity: 1;
+	}
+
+	.fa {
+		color: $main-color;
+		padding: 0 5px;
+		position: absolute;
+		left: 12px;
+		top: 20px;
+	}
+
+	input {
+		text-transform: uppercase;
+		border: none;
+		font-size: 14px;
+		font-weight: 700;
+		color: #48466d;
+		padding-left: 25px;
+		
+		font-family: 'Montserrat', sans-serif;
+	}
+}
+
+
+.cp-Panels {
+
+
+	.cp-Panel {
+		.fa {
+			-webkit-transition: all 0.88s cubic-bezier(0.7, 0, 0.3, 1);
+			-moz-transition: all 0.88s cubic-bezier(0.7, 0, 0.3, 1);
+			transition: all 0.88s cubic-bezier(0.7, 0, 0.3, 1);
+			position: absolute;
+			top: 23px;
+			right: 10px;
+			font-size: 17px;
+			opacity: .5;
+
+			&:hover {
+				opacity: .9;
+			}
+		}
+
+		&.cp-is-closed {
+
+		}
+
+		&.cp-is-open {
+			.fa {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	a.cp-Panel-toggle {
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 14px;
+		padding: 20px 60px 20px 15px;
+		display: block;
+		color: $main-color;
+		position: relative;
+		//border-bottom: 1px solid #ddd;
+	}
+
+	.cp-Panel-body {
+		border-bottom: 1px solid #ddd;
+	}
+
+	.cp-Panel-body-inner {
+		padding: 0 15px;
+
+		a {
+			display: block;
+			padding: 10px 0;
+			font-weight: 500;
+			font-size: 13px;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $main-color;
+		}
+	}
 }

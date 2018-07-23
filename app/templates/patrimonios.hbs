@@ -1,0 +1,78 @@
+{{outlet}}
+
+<div class="app-bar">
+	
+	{{#link-to 'index' class="logo" }}
+		<img src="/assets/icon-patrimonio.svg" alt="Patrimonio historico" width="36px">
+		<b>Patrimonio Historico de maipú</b>
+	{{/link-to}}
+	<div class="actions">
+
+		{{#link-to 'index' class="play-intro" }}
+			{{fa-icon "play" }} reproducir introducción
+		{{/link-to}}
+		{{#link-to 'sobre-la-aplicacion' class="play-intro" }}
+			{{fa-icon "info-circle" }} sobre la app
+		{{/link-to}}
+		
+	</div>
+</div>
+<div class="app-container">
+	<aside>
+		<div class="search-box">
+			{{fa-icon "search"}}
+			<input type="text" id="search-input" class="search-input" placeholder="Buscar">
+		</div>
+		{{#cp-panels accordion=true as |panels|}}
+		  {{#panels.panel as |panel|}}
+		    {{#panel.toggle}}
+		     personas destacadas <br>
+			de la historia local
+			{{fa-icon "chevron-down" }}
+		    {{/panel.toggle}}
+		    {{#panel.body}}
+				<a href="">Ramón Rodríguez</a>
+				<a href="">Emilio Valentín Alavedra</a>
+				<a href="">Jesús Segade</a>
+				<a href="">Francisco Mujica</a>
+				<a href="">Alida Peruchena</a>
+				<a href="">Magdalena González</a>
+		    {{/panel.body}}
+		  {{/panels.panel}}
+
+		  {{#panels.panel as |panel|}}
+		    {{#panel.toggle}}
+		      patrimonio <br>
+				arquitectonico
+			{{fa-icon "chevron-down" }}
+		    {{/panel.toggle}}
+		    {{#panel.body}}
+				<a href="">Celestina P. de Perotto</a>
+				<a href="">Delmiro Capra</a>
+				<a href="">Julio Belfiore</a>
+				<a href="">Jose Horacio Galetti </a>
+		    {{/panel.body}}
+
+		  {{/panels.panel}}
+
+		  {{#panels.panel as |panel|}}
+		    {{#panel.toggle}}
+		     simbologia <br>
+			masónica
+			{{fa-icon "chevron-down" }}
+		    {{/panel.toggle}}
+		    {{#panel.body}}
+		     	<a href="">bóveda familia lahitte</a>
+				<a href="">bóveda familia banfi</a>
+				<a href="">reloj de arena</a>
+				<a href="">panteón de la sociedad francesa</a>
+		    {{/panel.body}}
+
+		  {{/panels.panel}}
+		{{/cp-panels}}
+	</aside>
+	<main>
+		<img src="/assets/mk-demo.png" style=" width: 87%;" alt="">
+	</main>
+</div>
+
